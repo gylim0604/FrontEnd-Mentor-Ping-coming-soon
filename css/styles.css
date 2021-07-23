@@ -1,1 +1,85 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+}
+
+section {
+  max-width: 375px;
+  padding: 3rem;
+}
+
+.header {
+  height: 15vh;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.header img {
+  height: 1.25rem;
+}
+
+.cta-content h1 {
+  font-size: 1.5rem;
+  color: #969696;
+}
+
+.cta-content h1 b {
+  color: #151f29;
+}
+
+.cta-content h2 {
+  color: #151f29;
+  font-size: 1rem;
+}
+
+.input-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem 0;
+}
+
+.input-wrapper input {
+  border: 1px #c2d3ff solid;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  color: #c2d3ff;
+}
+
+.input-wrapper button {
+  background: #4f7df3;
+  border: none;
+  border-radius: 20px;
+  padding: 0.75rem 0;
+  color: white;
+}
+
+.footer {
+  color: #969696;
+}
+
+.footer p {
+  font-size: 0.75rem;
+}
+
+.social-links ul li {
+  display: inline-block;
+}
+/*# sourceMappingURL=styles.css.map */

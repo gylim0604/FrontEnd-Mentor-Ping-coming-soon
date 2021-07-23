@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+$lf: 'Libre Franklin', sans-serif;
+$lf-normal: 300;
+$lf-bold: 600;
+$lf-extra-bold: 700;
+$font-size: 20px;
+
+$blue: hsl(223, 87%, 63%);
+$pale-blue: hsl(223, 100%, 88%);
+$light-red: hsl(354, 100%, 66%);
+$gray: hsl(0, 0%, 59%);
+$v-dark-blue: hsl(209, 33%, 12%);
+$white: hsl(0, 0, 100%);
+$mobile: 375px;
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    font-family: $lf;
+    font-weight: $lf-normal;
+    font-size: $font-size;
+    text-align: center;
+}
+section {
+    max-width: $mobile;
+    padding: 3rem;
+}
+.header {
+    height: 15vh;
+    // margin: auto 0;
+    display: grid;
+    place-content: center;
+    img {
+        height: 1.25rem;
+    }
+}
+.cta-content {
+    h1 {
+        font-size: 1.5rem;
+        color: $gray;
+        b {
+            color: $v-dark-blue;
+        }
+    }
+    h2 {
+        color: $v-dark-blue;
+        font-size: 1rem;
+    }
+}
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    input {
+        border: 1px $pale-blue solid;
+        border-radius: 20px;
+        margin-bottom: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        color: $pale-blue;
+    }
+    button {
+        background: $blue;
+        border: none;
+        border-radius: 20px;
+        padding: 0.75rem 0;
+        color: $white;
+    }
+}
+
+.footer {
+    color: $gray;
+    p {
+        font-size: 0.75rem;
+    }
+}
+
+.social-links {
+    ul {
+        li {
+            display: inline-block;
+        }
+    }
+}
