@@ -8,43 +8,59 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: "Libre Franklin", sans-serif;
   font-weight: 300;
   font-size: 20px;
   text-align: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 section {
-  max-width: 375px;
-  padding: 3rem;
+  width: 100%;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
 }
 
 .header {
   height: 15vh;
+  padding: 10vh 0 5vh;
   display: -ms-grid;
   display: grid;
-  place-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .header img {
-  height: 1.25rem;
+  height: 1.1rem;
+}
+
+.cta {
+  padding: 1rem 0 5rem;
 }
 
 .cta-content h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #969696;
 }
 
 .cta-content h1 b {
   color: #151f29;
+  font-weight: 700;
 }
 
 .cta-content h2 {
   color: #151f29;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  padding: 1rem 0;
 }
 
-.input-wrapper {
+.action-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,34 +68,100 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1rem 0;
+  padding: 1rem 0 3rem;
 }
 
-.input-wrapper input {
+.action-wrapper .input-wrapper input {
+  width: 100%;
+  position: relative;
   border: 1px #c2d3ff solid;
   border-radius: 20px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   padding: 0.75rem 1.5rem;
+  caret-color: #c2d3ff;
+}
+
+.action-wrapper .input-wrapper input::-webkit-input-placeholder {
   color: #c2d3ff;
 }
 
-.input-wrapper button {
+.action-wrapper .input-wrapper input:-ms-input-placeholder {
+  color: #c2d3ff;
+}
+
+.action-wrapper .input-wrapper input::-ms-input-placeholder {
+  color: #c2d3ff;
+}
+
+.action-wrapper .input-wrapper input::placeholder {
+  color: #c2d3ff;
+}
+
+.action-wrapper .input-wrapper input:focus {
+  outline: 2px #c2d3ff solid;
+}
+
+.action-wrapper .input-wrapper.error input {
+  border: 1px #ff5263 solid;
+  caret-color: #ff5263;
+}
+
+.action-wrapper .input-wrapper.error input:focus {
+  outline: 2px #ff5263 solid;
+}
+
+.action-wrapper .input-wrapper.error::after {
+  content: 'Please provide a valid email address';
+  display: block;
+  color: #ff5263;
+  font-size: 0.75rem;
+  padding: 0 0 1rem;
+}
+
+.action-wrapper .error-text {
+  content: 'Please enter a valid email address';
+  color: #ff5263;
+  font-size: 0.7rem;
+  padding-bottom: 1rem;
+}
+
+.action-wrapper button {
   background: #4f7df3;
   border: none;
   border-radius: 20px;
   padding: 0.75rem 0;
   color: white;
+  font-weight: 600;
 }
 
 .footer {
   color: #969696;
+  padding-bottom: 2rem;
 }
 
 .footer p {
   font-size: 0.75rem;
 }
 
+.social-links {
+  padding-bottom: 1rem;
+}
+
 .social-links ul li {
+  margin: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px #969696 solid;
+  border-radius: 50%;
   display: inline-block;
+}
+
+.social-links ul li object {
+  stroke: #4f7df3;
+  fill: #4f7df3;
+  height: 1rem;
+}
+
+.social-icon {
+  fill: #4f7df3;
 }
 /*# sourceMappingURL=styles.css.map */

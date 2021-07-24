@@ -17,6 +17,11 @@
         <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/styles.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
         <section class="header">
@@ -26,12 +31,17 @@
             <div class="cta-content">
                 <h1>We are launching <b>soon!</b></h1>
                 <h2>Subscribe and get notified</h2>
-                <div class="input-wrapper">
-                    <input
-                        type="text"
-                        class="text"
-                        placeholder="Your email address..."
-                    /><button>Notify Me</button>
+                <div class="action-wrapper">
+                    <div class="input-wrapper">
+                        <input
+                            id="email-input"
+                            type="text"
+                            class=""
+                            placeholder="Your email address..."
+                        />
+                    </div>
+
+                    <button>Notify Me</button>
                 </div>
             </div>
             <div class="cta-img">
@@ -41,12 +51,45 @@
         <section class="footer">
             <div class="social-links">
                 <ul>
-                    <li>temp<img src="" alt="" /></li>
-                    <li>temp<img src="" alt="" /></li>
-                    <li>temp<img src="" alt="" /></li>
+                    <li>
+                        <object
+                            type="image/svg+xml"
+                            data="images/facebook.svg"
+                        ></object>
+                    </li>
+                    <li>
+                        <object
+                            type="image/svg+xml"
+                            data="images/twitter.svg"
+                        ></object>
+                    </li>
+                    <li>
+                        <object
+                            type="image/svg+xml"
+                            data="images/instagram.svg"
+                        ></object>
+                    </li>
                 </ul>
             </div>
             <p>&copy; Copyright Ping. All rights reserved.</p>
         </section>
+        <script>
+            $(document).ready(function () {
+                function validateEmail(email) {
+                    var re = /\S+@\S+\.\S+/;
+                    return re.test(email);
+                }
+                $('#email-input').change(function (e) {
+                    let parent = $(this).parent();
+                    if (!validateEmail($(this).val())) {
+                        parent.addClass('error');
+                        parent.children('button').prop('disabled', true);
+                        // disable button
+                    } else {
+                        parent.removeClass('error');
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

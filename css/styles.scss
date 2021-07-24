@@ -18,48 +18,92 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
+    align-items: center;
     font-family: $lf;
     font-weight: $lf-normal;
     font-size: $font-size;
     text-align: center;
+    justify-content: space-evenly;
 }
 section {
-    max-width: $mobile;
-    padding: 3rem;
+    // max-width: $mobile;
+    width: 100%;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
 }
 .header {
     height: 15vh;
-    // margin: auto 0;
+    padding: 10vh 0 5vh;
     display: grid;
-    place-content: center;
+    justify-content: center;
     img {
-        height: 1.25rem;
+        height: 1.1rem;
     }
+}
+.cta {
+    padding: 1rem 0 5rem;
 }
 .cta-content {
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         color: $gray;
+
         b {
             color: $v-dark-blue;
+            font-weight: $lf-extra-bold;
         }
     }
     h2 {
         color: $v-dark-blue;
-        font-size: 1rem;
+        font-size: 0.9rem;
+        padding: 1rem 0;
     }
 }
-.input-wrapper {
+.action-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 1rem 0;
-    input {
-        border: 1px $pale-blue solid;
-        border-radius: 20px;
-        margin-bottom: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        color: $pale-blue;
+    padding: 1rem 0 3rem;
+    .input-wrapper {
+        input {
+            width: 100%;
+            position: relative;
+            border: 1px $pale-blue solid;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            caret-color: $pale-blue;
+            &::placeholder {
+                color: $pale-blue;
+            }
+            &:focus {
+                // background: black;
+                outline: 2px $pale-blue solid;
+            }
+        }
+        &.error {
+            input {
+                border: 1px $light-red solid;
+                caret-color: $light-red;
+                &:focus {
+                    // background: black;
+                    outline: 2px $light-red solid;
+                }
+            }
+            &::after {
+                content: 'Please provide a valid email address';
+                display: block;
+                color: $light-red;
+                font-size: 0.75rem;
+                padding: 0 0 1rem;
+            }
+        }
+    }
+
+    .error-text {
+        content: 'Please enter a valid email address';
+        color: $light-red;
+        font-size: 0.7rem;
+        padding-bottom: 1rem;
     }
     button {
         background: $blue;
@@ -67,20 +111,36 @@ section {
         border-radius: 20px;
         padding: 0.75rem 0;
         color: $white;
+        font-weight: $lf-bold;
     }
 }
 
 .footer {
     color: $gray;
+    padding-bottom: 2rem;
     p {
         font-size: 0.75rem;
     }
 }
 
 .social-links {
+    padding-bottom: 1rem;
     ul {
         li {
+            margin: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            border: 1px $gray solid;
+            border-radius: 50%;
             display: inline-block;
+            object {
+                stroke: $blue;
+                fill: $blue;
+                height: 1rem;
+            }
         }
     }
+}
+
+.social-icon {
+    fill: $blue;
 }
