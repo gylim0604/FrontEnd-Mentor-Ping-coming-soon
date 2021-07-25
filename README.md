@@ -45,7 +45,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/gylim0604/FrontEnd-Mentor-Ping-coming-soon)
-- Live Site URL: [Vercel](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://front-end-mentor-ping-coming-soon.vercel.app/)
 
 ## My process
 
