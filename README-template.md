@@ -4,17 +4,17 @@ This is a solution to the [Ping coming soon page challenge on Frontend Mentor](h
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Frontend Mentor - Ping coming soon page solution](#frontend-mentor---ping-coming-soon-page-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -33,83 +33,74 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+**Mobile**
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+<img src="images/../screenshots/mobile.png" height=500 style="padding-right: 20px" alt="mobile-view">
+<img src="images/../screenshots/mobile-error.png" height=500 alt="mobile-view with error">
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+**Desktop**
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+<img src="images/../screenshots/desktop.png" height=500 alt="Desktop view">
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/gylim0604/FrontEnd-Mentor-Ping-coming-soon)
+- Live Site URL: [Vercel](https://your-live-site-url.com)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- SCSS
+- Javascript
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Mostly a fast project, so I used this chance to properly learn how to manipulate svgs. 
+So here are some findings: 
+- 1 SVGs can be used in multiple ways, the way I prefer is by importing them through xlink, with the SVG def stored in an external file. Here is an example:
+  ```
+  <svg class="icon">
+      <use
+          xlink:href="images/twitter.svg#icon-twitter"
+      ></use>
+  </svg>
+  ```
+  For the SVG to work this way, it has to be saved with the def tags.
+  ```html
+  <svg>
+    <defs>
+      <symbol id="icon-facebook" viewBox="0 0 32 32">
+        <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
+      </symbol>
+    </defs>
+  </svg>
+  ```
+  I think majority of SVGs do not include this when you download them, so it would be good to take note.
 
-To see how you can add code snippets, see below:
+- 2 Importing SVGs through xlink allows very easy manipulation with the CSS. 
+  For example, to change the color of the SVG, all we need is just this line of code.
+  ```css
+  .icon {
+        
+        fill: $blue;
+    }
+  ```
+Another thing I learned was that the pseudo-elements ::after and ::before does not work with the \<input> tag. This is because the pseudo-elements only work on **container** elements i.e. 
+\<div>, \<label> etc. The \<input> element is unfortunately not considered a "container" element. 
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Vecta.io](https://vecta.io/blog/best-way-to-embed-svg),[svgontheweb.com](https://svgontheweb.com/) - These two articles helped me understand SVGs more in depth
+- [scottohara.me](https://www.scottohara.me/blog/2014/06/24/pseudo-element-input.html) - This post on the blog helped me understand why the ::after element wasn't working with my \<input>
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
+- Frontend Mentor - [@gylim0604](https://www.frontendmentor.io/profile/gylim0604)
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

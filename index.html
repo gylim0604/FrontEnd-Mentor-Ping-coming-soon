@@ -32,7 +32,7 @@
                 <h1>We are launching <b>soon!</b></h1>
                 <h2>Subscribe and get notified</h2>
                 <div class="action-wrapper">
-                    <div class="input-wrapper error">
+                    <div class="input-wrapper">
                         <input
                             id="email-input"
                             type="text"
@@ -52,22 +52,25 @@
             <div class="social-links">
                 <ul>
                     <li>
-                        <object
-                            type="image/svg+xml"
-                            data="images/facebook.svg"
-                        ></object>
+                        <svg class="icon">
+                            <use
+                                xlink:href="images/facebook.svg#icon-facebook"
+                            ></use>
+                        </svg>
                     </li>
                     <li>
-                        <object
-                            type="image/svg+xml"
-                            data="images/twitter.svg"
-                        ></object>
+                        <svg class="icon">
+                            <use
+                                xlink:href="images/twitter.svg#icon-twitter"
+                            ></use>
+                        </svg>
                     </li>
                     <li>
-                        <object
-                            type="image/svg+xml"
-                            data="images/instagram.svg"
-                        ></object>
+                        <svg class="icon">
+                            <use
+                                xlink:href="images/instagram.svg#icon-instagram"
+                            ></use>
+                        </svg>
                     </li>
                 </ul>
             </div>
@@ -79,17 +82,23 @@
                     var re = /\S+@\S+\.\S+/;
                     return re.test(email);
                 }
-                $('#email-input').on('keyup', function (e) {
-                    let parent = $(this).parent();
-                    let button = parent.siblings('button');
-                    if (!validateEmail($(this).val())) {
-                        parent.addClass('error');
-                        button.attr('disabled', true);
+                $('.action-wrapper button').on('click', function (e) {
+                    let wrapper = $(this).siblings('.input-wrapper');
+                    let input = $(this)
+                        .siblings('.input-wrapper')
+                        .children('input');
+                    if (!validateEmail(input.val())) {
+                        wrapper.addClass('error');
+                        $(this).attr('disabled', true);
                         // disable button
                     } else {
-                        parent.removeClass('error');
-                        button.attr('disabled', false);
+                        wrapper.removeClass('error');
+                        $(this).attr('disabled', false);
                     }
+                });
+                $('.input-wrapper input').on('keyup', function (e) {
+                    $(this).parent().removeClass('error');
+                    $('.action-wrapper button').attr('disabled', false);
                 });
             });
         </script>

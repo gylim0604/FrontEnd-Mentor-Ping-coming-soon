@@ -26,7 +26,6 @@ body {
     justify-content: space-evenly;
 }
 section {
-    // max-width: $mobile;
     width: 100%;
     padding-left: 3rem !important;
     padding-right: 3rem !important;
@@ -98,13 +97,6 @@ section {
             }
         }
     }
-
-    // .error-text {
-    //     content: 'Please enter a valid email address';
-    //     color: $light-red;
-    //     font-size: 0.7rem;
-    //     padding-bottom: 1rem;
-    // }
     button {
         background: $blue;
         border: none;
@@ -141,8 +133,13 @@ section {
             border: 1px $gray solid;
             border-radius: 50%;
             display: inline-block;
-            object {
+            .icon {
                 height: 1rem;
+                width: 1rem;
+                fill: $blue;
+            }
+            &:hover .icon {
+                fill: $white;
             }
         }
     }
@@ -151,9 +148,16 @@ section {
 .social-icon {
     fill: $blue;
 }
+
 @media only screen and (min-width: 769px) {
     section {
         max-width: 768px;
+    }
+
+    .header {
+        img {
+            height: 1.5rem;
+        }
     }
     .cta-content {
         h1 {
@@ -170,7 +174,7 @@ section {
     .action-wrapper {
         width: 100%;
         flex-direction: row;
-        padding: 1rem 0 3rem;
+        padding: 1rem 0 5rem;
         .input-wrapper {
             width: 70%;
             margin-right: 1rem;
