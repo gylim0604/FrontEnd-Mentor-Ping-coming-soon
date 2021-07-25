@@ -32,7 +32,7 @@
                 <h1>We are launching <b>soon!</b></h1>
                 <h2>Subscribe and get notified</h2>
                 <div class="action-wrapper">
-                    <div class="input-wrapper">
+                    <div class="input-wrapper error">
                         <input
                             id="email-input"
                             type="text"
@@ -79,14 +79,16 @@
                     var re = /\S+@\S+\.\S+/;
                     return re.test(email);
                 }
-                $('#email-input').change(function (e) {
+                $('#email-input').on('keyup', function (e) {
                     let parent = $(this).parent();
+                    let button = parent.siblings('button');
                     if (!validateEmail($(this).val())) {
                         parent.addClass('error');
-                        parent.children('button').prop('disabled', true);
+                        button.attr('disabled', true);
                         // disable button
                     } else {
                         parent.removeClass('error');
+                        button.attr('disabled', false);
                     }
                 });
             });

@@ -118,20 +118,24 @@ section {
   padding: 0 0 1rem;
 }
 
-.action-wrapper .error-text {
-  content: 'Please enter a valid email address';
-  color: #ff5263;
-  font-size: 0.7rem;
-  padding-bottom: 1rem;
-}
-
 .action-wrapper button {
   background: #4f7df3;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
   padding: 0.75rem 0;
   color: white;
   font-weight: 600;
+  -webkit-box-shadow: 1px 5px 1px 1px #e7edfd;
+          box-shadow: 1px 5px 1px 1px #e7edfd;
+}
+
+.action-wrapper button:active {
+  background: #1f5aef;
+}
+
+.action-wrapper button:disabled {
+  background: #7ea0f6;
 }
 
 .footer {
@@ -156,12 +160,59 @@ section {
 }
 
 .social-links ul li object {
-  stroke: #4f7df3;
-  fill: #4f7df3;
   height: 1rem;
 }
 
 .social-icon {
   fill: #4f7df3;
+}
+
+@media only screen and (min-width: 769px) {
+  section {
+    max-width: 768px;
+  }
+  .cta-content h1 {
+    font-size: 3rem;
+  }
+  .cta-content h1 b {
+    color: #151f29;
+    font-weight: 700;
+  }
+  .cta-content h2 {
+    font-size: 1.2rem;
+  }
+  .action-wrapper {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 1rem 0 3rem;
+  }
+  .action-wrapper .input-wrapper {
+    width: 70%;
+    margin-right: 1rem;
+  }
+  .action-wrapper .input-wrapper input {
+    margin-bottom: 0;
+  }
+  .action-wrapper .input-wrapper.error::after {
+    position: absolute;
+    font-style: italic;
+    text-align: left;
+    padding: 0.5rem 0 0 1.5rem;
+  }
+  .action-wrapper button {
+    width: 30%;
+  }
+  .social-links {
+    padding-bottom: 1rem;
+  }
+  .social-links ul li:hover {
+    background: #4f7df3;
+  }
+  .social-icon:hover {
+    fill: white;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

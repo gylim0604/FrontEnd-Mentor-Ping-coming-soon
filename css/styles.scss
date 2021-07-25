@@ -99,19 +99,28 @@ section {
         }
     }
 
-    .error-text {
-        content: 'Please enter a valid email address';
-        color: $light-red;
-        font-size: 0.7rem;
-        padding-bottom: 1rem;
-    }
+    // .error-text {
+    //     content: 'Please enter a valid email address';
+    //     color: $light-red;
+    //     font-size: 0.7rem;
+    //     padding-bottom: 1rem;
+    // }
     button {
         background: $blue;
         border: none;
         border-radius: 20px;
+        cursor: pointer;
         padding: 0.75rem 0;
         color: $white;
         font-weight: $lf-bold;
+        box-shadow: 1px 5px 1px 1px lighten($blue, 32%);
+        &:active {
+            background: darken($blue, 10%);
+        }
+
+        &:disabled {
+            background: lighten($blue, 10%);
+        }
     }
 }
 
@@ -133,8 +142,6 @@ section {
             border-radius: 50%;
             display: inline-block;
             object {
-                stroke: $blue;
-                fill: $blue;
                 height: 1rem;
             }
         }
@@ -143,4 +150,58 @@ section {
 
 .social-icon {
     fill: $blue;
+}
+@media only screen and (min-width: 769px) {
+    section {
+        max-width: 768px;
+    }
+    .cta-content {
+        h1 {
+            font-size: 3rem;
+            b {
+                color: $v-dark-blue;
+                font-weight: $lf-extra-bold;
+            }
+        }
+        h2 {
+            font-size: 1.2rem;
+        }
+    }
+    .action-wrapper {
+        width: 100%;
+        flex-direction: row;
+        padding: 1rem 0 3rem;
+        .input-wrapper {
+            width: 70%;
+            margin-right: 1rem;
+            input {
+                margin-bottom: 0;
+            }
+            &.error {
+                &::after {
+                    position: absolute;
+                    font-style: italic;
+                    text-align: left;
+                    padding: 0.5rem 0 0 1.5rem;
+                }
+            }
+        }
+
+        button {
+            width: 30%;
+        }
+    }
+    .social-links {
+        padding-bottom: 1rem;
+        ul {
+            li {
+                &:hover {
+                    background: $blue;
+                }
+            }
+        }
+    }
+    .social-icon:hover {
+        fill: $white;
+    }
 }
