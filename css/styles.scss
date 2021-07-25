@@ -75,8 +75,10 @@ section {
                 color: $pale-blue;
             }
             &:focus {
-                // background: black;
-                outline: 2px $pale-blue solid;
+                outline: none;
+                border-radius: 20px;
+                box-shadow: 0px 0px 1px $blue, 0px 0px 2px $blue,
+                    0px 0px 3px $blue;
             }
         }
         &.error {
@@ -84,8 +86,10 @@ section {
                 border: 1px $light-red solid;
                 caret-color: $light-red;
                 &:focus {
-                    // background: black;
-                    outline: 2px $light-red solid;
+                    outline: none;
+                    border-radius: 20px;
+                    box-shadow: 0px 0px 1px $light-red, 0px 0px 2px $light-red,
+                        0px 0px 3px $light-red;
                 }
             }
             &::after {
